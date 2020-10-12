@@ -47,20 +47,29 @@ def character_race_roll():
     
     return r.choice(races)
 
-def print_character()
+def print_character(character=None):
+    if character != None:
+        for stat in character:
+            print(stat)
 
-    character_stats = character_creation_rolls()
-    for stat in character_stats:
-        print(stat)
+        print('-------------')
+        character_race = character_race_roll()
+        character_class = character_class_roll()
+        print(character_race + ' - ' + character_class)
+        print('-------------')
+    else:
+        character_stats = character_creation_rolls()
+        for stat in character_stats:
+            print(stat)
 
-    print('-------------')
-    character_race = character_race_roll()
-    character_class = character_class_roll()
-    print(character_race + ' - ' + character_class)
-    print('-------------')
+        print('-------------')
+        character_race = character_race_roll()
+        character_class = character_class_roll()
+        print(character_race + ' - ' + character_class)
+        print('-------------')
 
 
-if __name__ == "__main__":
+def ignore_generate_one_good_one_bad_character():
     counter = 0
     best_character = []
     worst_character = [18, 18, 18, 18, 18 ,18]
@@ -72,6 +81,10 @@ if __name__ == "__main__":
         if sum(character_stats) < sum(worst_character):
             worst_character = character_stats
 
-    print_character()
+    print('Best Character')
+    print_character(best_character)
+    print('Worst Character')
+    print_character(worst_character)
 
+if __name__ == "__main__":
     print_character()
