@@ -48,16 +48,7 @@ def character_race_roll():
     return r.choice(races)
 
 def print_character(character=None):
-    if character != None:
-        for stat in character:
-            print(stat)
-
-        print('-------------')
-        character_race = character_race_roll()
-        character_class = character_class_roll()
-        print(character_race + ' - ' + character_class)
-        print('-------------')
-    else:
+    if character == None:
         character_stats = character_creation_rolls()
         for stat in character_stats:
             print(stat)
@@ -65,8 +56,15 @@ def print_character(character=None):
         print('-------------')
         character_race = character_race_roll()
         character_class = character_class_roll()
-        print(character_race + ' - ' + character_class)
+        print(character_race + ' - ' + character_class)      
+    else:
+        for stat in character:
+            print(stat)
+
         print('-------------')
+        character_race = character_race_roll()
+        character_class = character_class_roll()
+        print(character_race + ' - ' + character_class)
 
 
 def ignore_generate_one_good_one_bad_character():
