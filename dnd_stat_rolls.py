@@ -67,7 +67,7 @@ def print_character(character=None):
         print(character_race + ' - ' + character_class)
 
 
-def ignore_generate_one_good_one_bad_character():
+def generate_one_good_one_bad_character():
     counter = 0
     best_character = []
     worst_character = [18, 18, 18, 18, 18 ,18]
