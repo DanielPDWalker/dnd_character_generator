@@ -1,4 +1,14 @@
 import random as r
+import csv
+
+with open('data/classes.csv') as f:
+    reader = csv.reader(f)
+    classes = list(reader)
+
+with open('data/races.csv') as f:
+    reader = csv.reader(f)
+    races = list(reader)
+
 
 def character_creation_rolls():
     roll_holding_list = []
@@ -16,35 +26,12 @@ def character_creation_rolls():
     return stat_holding_list
 
 def character_class_roll():
-    classes = ['Barbarian',
-        'Bard',
-        'Cleric',
-        'Druid',
-        'Fighter',
-        'Monk',
-        'Paladin',
-        'Ranger',
-        'Sorcerer',
-        'Warlock',
-        'Wizard'
-        ]
     return r.choice(classes)
 
 def character_specialisation_roll():
     pass
 
 def character_race_roll():
-    races = ['Dwarf',
-        'Elf',
-        'Halfling',
-        'Human',
-        'Dragonborn',
-        'Gnome',
-        'Half-Elf',
-        'Half-Orc',
-        'Tiefling'
-        ]
-    
     return r.choice(races)
 
 def print_character(character=None):
