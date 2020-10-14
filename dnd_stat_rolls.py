@@ -1,13 +1,14 @@
 import random as r
 import csv
 
-with open('data/classes.csv') as f:
+with open('data/classes.csv', newline='') as f:
     reader = csv.reader(f)
     classes = list(reader)
 
-with open('data/races.csv') as f:
+with open('data/races.csv', newline='') as f:
     reader = csv.reader(f)
     races = list(reader)
+    print(races)
 
 
 def character_creation_rolls():
@@ -26,13 +27,13 @@ def character_creation_rolls():
     return stat_holding_list
 
 def character_class_roll():
-    return r.choice(classes)
+    return str(r.choice(classes))
 
 def character_specialisation_roll():
     pass
 
 def character_race_roll():
-    return r.choice(races)
+    return str(r.choice(races))
 
 def print_character(character=None):
     if character == None:
@@ -43,6 +44,8 @@ def print_character(character=None):
         print('-------------')
         character_race = character_race_roll()
         character_class = character_class_roll()
+        print(character_class)
+        print(character_race)
         print(character_race + ' - ' + character_class)      
     else:
         for stat in character:

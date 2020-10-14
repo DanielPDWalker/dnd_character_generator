@@ -1,10 +1,9 @@
-races = ['Dwarf',
-        'Elf',
-        'Halfling',
-        'Human',
-        'Dragonborn',
-        'Gnome',
-        'Half-Elf',
-        'Half-Orc',
-        'Tiefling'
-        ]
+Dwarf
+Elf
+Halfling
+Human
+Dragonborn
+Gnome
+Half-Elf
+Half-Orc
+Tiefling
