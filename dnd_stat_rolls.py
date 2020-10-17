@@ -1,9 +1,9 @@
 import random as r
 import csv
 
+
 RACES = []
 CLASSES = []
-
 
 with open('data/classes.csv', 'r') as file:
     for item in file:
@@ -31,9 +31,6 @@ def character_creation_rolls():
 def character_class_roll():
     return str(r.choice(CLASSES)).strip()
 
-def character_specialisation_roll():
-    pass
-
 def character_race_roll():
     return str(r.choice(RACES)).strip()
 
@@ -55,7 +52,6 @@ def print_character(character=None):
         character_race = character_race_roll()
         character_class = character_class_roll()
         print(character_race + ' - ' + character_class)
-
 
 def generate_one_good_one_bad_character():
     counter = 0
