@@ -4,6 +4,9 @@ import csv
 
 RACES = []
 CLASSES = []
+ALIGNMENTS = ['Lawful Good', 'Neutral Good', 'Chaotic Good',
+              'Lawful Neutral', 'True Neutral', 'Chaotic Neutral',
+              'Lawful Evil', 'Neutral Evil', 'Chaotic Evil']
 
 with open('data/classes.csv', 'r') as file:
     for item in file:
@@ -39,7 +42,7 @@ def character_race_roll():
 
 
 def character_alignment_roll():
-    pass
+    return str(r.choice(ALIGNMENTS)).strip()
 
 
 def print_character(character=None):
@@ -51,8 +54,9 @@ def print_character(character=None):
         print('-------------')
         character_race = character_race_roll()
         character_class = character_class_roll()
-        print(character_alignment)
-        print(character_race + ' - ' + character_class)
+        character_alignment = character_alignment_roll()
+        print(character_alignment + ' - ' +
+              character_race + ' - ' + character_class)
     else:
         for stat in character:
             print(stat)
@@ -60,8 +64,9 @@ def print_character(character=None):
         print('-------------')
         character_race = character_race_roll()
         character_class = character_class_roll()
-        print(character_alignment)
-        print(character_race + ' - ' + character_class)
+        character_alignment = character_alignment_roll()
+        print(character_alignment + ' - ' +
+              character_race + ' - ' + character_class)
 
 
 def generate_one_good_one_bad_character():
